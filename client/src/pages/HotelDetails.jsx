@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar, faCommentDots } from "@fortawesome/free-solid-svg-icons";
-import "./styles/HotelDetails.css";
+import "./styles/HotelDetails.scss";
 import hotelImg1 from "../assets/images/hotel_img1.jpg";
 import hotelImg2 from "../assets/images/hotel_img2.jpg";
 import img1 from "../assets/images/hotel_smaller3.jpg";
@@ -56,6 +56,24 @@ const HotelDetails = () => {
       rating: 3,
     },
   ];
+   const [visibleReviews,setVisibleReviews]=useState([]);
+   const updatevisbleReviews=()=>{
+    const width=window.innerWidth;
+    if (width >= 1093) {
+      setVisibleReviews(reviews.slice(0, 6)); 
+    } else if (width >= 768) {
+      setVisibleReviews(reviews.slice(0, 4));
+    } else {
+      setVisibleReviews(reviews.slice(0, 2)); 
+    }
+   }
+useEffect(()=>{
+  updatevisbleReviews();
+  window.addEventListener('resize',updatevisbleReviews);
+  return ()=>{
+    window.removeEventListener('resize',updatevisbleReviews);
+  }
+},[]);
 
   return (
     <div className="hotel_main">
@@ -120,7 +138,7 @@ const HotelDetails = () => {
             </div>
           </div>
           <div className="bottom">
-            {reviews.map((review, index) => (
+            {visibleReviews.map((review, index) => (
               <div key={index} className="review">
                 <div className="msg-icons">
                   <FontAwesomeIcon

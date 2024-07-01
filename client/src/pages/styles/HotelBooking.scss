@@ -1,0 +1,124 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+.booking_main {
+  height: 90vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  .upper {
+    height: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    .img1 {
+      height: 100%;
+      width: 82%;
+
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+    .img2 {
+      height: 100%;
+      width: 17.5%;
+      object-fit: cover;
+
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+  .lower {
+    height: 49.5%;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    .images {
+      width: 35.5%;
+      height: 100%;
+      display: flex;
+      justify-content: space-between;
+
+      flex-wrap: wrap;
+      .img3 {
+        height: 49.7%;
+        width: 49.5%;
+        margin-bottom: 0.5%;
+        background-color: rgb(34, 79, 79);
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+  }
+  .booking_form {
+    height: 85%;
+    width: 30%;
+    background-color: rgba(34, 79, 79, 0.6);
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .header {
+      margin-bottom: 15%;
+      width: 70%;
+      text-align: center;
+
+      h2 {
+        margin: 0;
+        color: white;
+      }
+    }
+
+    .inputForm {
+      margin-bottom: 20px;
+      margin-bottom: 15%;
+      width: 80%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      form {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+        label {
+          margin-bottom: 9%;
+          color: white;
+
+          select,
+          input {
+            margin-left: 10px;
+          }
+        }
+      }
+    }
+
+    .btn {
+      display: flex;
+      justify-content: center;
+      width: 80%;
+
+      button {
+        background-color: yellow;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+      }
+    }
+  }
+}
